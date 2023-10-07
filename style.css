@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    background-image: url(./background.jpg);
+}
+
+body {
+    background-color: #F5E8B7;
+    margin: 0 5vw 1vw;
+    height: 800px;
+}
+
+header {
+    float: left;
+    width: 20%;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: #e25f3e;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li ul li a {
+    display: block;
+    padding: 5px;
+    font-size: 17px;
+}
+
+nav ul li ul li {
+    background-color: #CD5C08;
+}
+
+main {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 600px;
+}
+
+footer {
+    text-align: center;
+    background-color: #C1D8C3;
+    width: 100%;
+    padding: 10px;
+}
