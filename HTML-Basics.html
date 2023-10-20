@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="HTML basics" />
     <meta name="keywords" content="HTML XHTML" />
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
 
   <body>
@@ -15,7 +15,7 @@
       <nav>
         <ul>
           <li>
-            Main
+            <a href="#main" target="_self">Main</a>
             <ul>
               <li><a href="#data-table" target="_self">Data</a></li>
               <li><a href="#image" target="_self">Image</a></li>
@@ -24,26 +24,25 @@
           </li>
 
           <li>
-            Footer
+            <a href="#newsletter" target="_self">Footer</a>
             <ul>
               <li><a href="#newsletter" target="_self">Newsletter</a></li>
             </ul>
           </li>
         </ul>
-        <hr />
       </nav>
     </header>
 
     <main>
-      <h1>TIN Website</h1>
+      <h1 id="main">TIN Website</h1>
       <h2>Personal data</h2>
       <table id="data-table">
-        <tr>
+        <thead>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Age</th>
           <th>Country</th>
-        </tr>
+        </thead>
         <tr>
           <td>Alfreds</td>
           <td><strong>Futterkiste</strong></td>
@@ -76,75 +75,83 @@
       </p>
 
       <img
-        src="contact.jpg"
+        src="https://rolandliedtke.me/tin/contact.jpg"
         id="image"
         alt="contact image"
       />
 
       <form id="contact-form">
-        <h2>Contact Form</h2>
+        <fieldset>
+          <legend>Contact Form</legend>
 
-        <label for="firstname">First Name</label>
-        <input
-          id="firstname"
-          name="firstname"
-          type="text"
-          placeholder="John"
-        /><br />
+          <div>
+            <label for="firstname">First Name</label>
+            <input
+              id="firstname"
+              name="firstname"
+              type="text"
+              placeholder="John"
+            /><br />
 
-        <label for="lastname">Last Name</label>
-        <input
-          id="lastname"
-          name="lastname"
-          type="text"
-          placeholder="Smith"
-        /><br />
+            <label for="lastname">Last Name</label>
+            <input
+              id="lastname"
+              name="lastname"
+              type="text"
+              placeholder="Smith"
+            /><br />
 
-        <label for="age">Age</label>
-        <input
-          id="age"
-          min="1"
-          max="100"
-          name="age"
-          type="number"
-          placeholder="25"
-        /><br />
+            <label for="age">Age</label>
+            <input
+              id="age"
+              min="1"
+              max="100"
+              name="age"
+              type="number"
+              placeholder="25"
+            /><br />
 
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="Poland" selected>Poland</option>
-          <option value="Other">Other</option></select
-        ><br />
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="Poland" selected>Poland</option>
+              <option value="Other">Other</option></select
+            ><br />
 
-        How did we do?<br />
-        <label class="container">1</label>
-        <input type="radio" checked="checked" name="radio" />
+            How did we do?<br />
+            <label class="container">1</label>
+            <input type="radio" checked="checked" name="radio" />
 
-        <label class="container">2</label>
-        <input type="radio" name="radio" />
+            <label class="container">2</label>
+            <input type="radio" name="radio" />
 
-        <label class="container">3</label>
-        <input type="radio" name="radio" />
+            <label class="container">3</label>
+            <input type="radio" name="radio" />
 
-        <label class="container">4</label>
-        <input type="radio" name="radio" />
+            <label class="container">4</label>
+            <input type="radio" name="radio" />
 
-        <label class="container">5</label>
-        <input type="radio" name="radio" /><br />
+            <label class="container">5</label>
+            <input type="radio" name="radio" /><br />
+          </div>
 
-        <label for="message">Subject</label>
-        <textarea
-          id="message"
-          name="message"
-          maxlength="1000"
-          placeholder="Write your message..."
-          rows="10"
-          cols="30"
-        ></textarea
-        ><br />
+          <div>
+           
 
-        <button type="reset" onclick="">Reset</button>
-        <button type="submit" onclick="alert('Good job!')">Submit</button>
+            <label for="message">Subject</label>
+            <textarea
+              id="message"
+              name="message"
+              maxlength="1000"
+              placeholder="Write your message..."
+              rows="10"
+              cols="30"
+            ></textarea
+            ><br />
+
+            <button type="reset" onclick="">Reset</button>
+            <button type="submit" onclick="alert('Good job!')">Submit</button>
+          </div>
+        </fieldset>
       </form>
       <hr />
     </main>
