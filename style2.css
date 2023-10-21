@@ -2,22 +2,75 @@
     box-sizing: border-box;
 }
 
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     color: black;
 }
 
-header nav ul li {
-    list-style: none;
-    display: inline;
+header {
+    overflow: hidden;
 }
 
-header nav ul li a {
+header a {
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
 }
 
-header nav ul li ul {
-    display: none;
+/* The subnavigation menu */
+.subnav {
+    float: left;
+    overflow: hidden;
 }
+
+/* Subnav button */
+.subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+}
+
+/* Add a red background color to navigation links on hover */
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+    background-color: gray;
+    color: white;
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 8px;
+    background-color: gray;
+    width: fit-content;
+    z-index: 1;
+}
+
+/* Style the subnav links */
+.subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+    display: block;
+}
+
 
 main {
     background-color: silver;
@@ -27,12 +80,24 @@ main {
     color: #8f8a8a;
 }
 
+@media screen and (max-width: 1000px) {
+    main {
+        flex-direction: column;
+    }
+}
+
 main div {
     background-color: white;
     margin: 10px;
     box-shadow: 3px 3px #888888;
     padding: 10px;
     width: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+    main div {
+        width: auto;
+    }
 }
 
 main div img {
@@ -68,7 +133,9 @@ main div form fieldset div {
     width: 100%;
 }
 
-main div form fieldset div input, select, textarea {
+main div form fieldset div input,
+select,
+textarea {
     display: block;
     width: 100%;
 }
@@ -77,6 +144,7 @@ main div form fieldset div input[type=radio] {
     display: inline-block;
     width: 10px;
 }
+
 
 footer {
     padding-top: 10px;
