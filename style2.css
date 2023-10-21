@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: black;
+}
+
+header nav ul li {
+    list-style: none;
+    display: inline;
+}
+
+header nav ul li a {
+    text-decoration: none;
+}
+
+header nav ul li ul {
+    display: none;
+}
+
+main {
+    background-color: silver;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    color: #8f8a8a;
+}
+
+main div {
+    background-color: white;
+    margin: 10px;
+    box-shadow: 3px 3px #888888;
+    padding: 10px;
+    width: 50%;
+}
+
+main div img {
+    width: 100%;
+}
+
+main div table {
+    color: black;
+    text-align: center;
+}
+
+main div table th {
+    width: 100px;
+}
+
+main div table tr td {
+    font-weight: 300;
+    border-bottom: 2px solid gray;
+}
+
+main div form fieldset {
+    background-color: #c0bdbd;
+}
+
+main div form fieldset legend {
+    color: black;
+}
+
+main div form fieldset div {
+    background-color: #c0bdbd;
+    color: black;
+    box-shadow: none;
+    width: 100%;
+}
+
+main div form fieldset div input, select, textarea {
+    display: block;
+    width: 100%;
+}
+
+main div form fieldset div input[type=radio] {
+    display: inline-block;
+    width: 10px;
+}
+
+footer {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+footer div {
+    width: 33%;
+    border-left: 1px solid rgb(168, 157, 157);
+    border-right: 1px solid rgb(168, 157, 157);
+    padding: 10px;
+    color: #8f8a8a;
+}
+
+footer div p {
+    text-align: center;
+}
+
+#copyright {
+    display: none;
+}
