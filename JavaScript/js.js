@@ -194,7 +194,45 @@ function zadanie7(shape, ...params) {
     }
 }
 
-function zadanie8() {
+// Zadanie 8
+const rectangle = function(params) {
+    return params[0] * params[1];
+}
+
+const trapezium = function(params) {
+    return ((params[0] + params[1]) * params[2]) / 2;
+}
+
+const parallelogram = function(params) {
+    return (params[0] * params[1]) / 2;
+}
+
+const triangle = function(params) {
+    return (params[0] * params[1]) / 2;
+}
+
+function zadanie8(shape, ...params) {
+
     /* Napisz funkcję liczącą pole wybranej figury (prostokąt, trapez, równoległobok, trójkąt) bez użycia instrukcji warunkowej (bez if, switch, pętli). Wykorzystaj funkcje anonimowe i callback. */
+
+    return shape(params);
+}
+
+function zadanie9() {
+
+    // !! DOKOŃCZ !!
+
+    /* Napisz funkcję wypisującą w konsoli trójkąt Pascala o wysokości podanej jako parametr. */
+
+
+}
+
+function zadanie10() {
+
+    // !! DOKOŃCZ !!
+
+    /* Napisz funkcję cenzurującą zdanie. Funkcja ma otrzymać 2 parametry: tablicę niedozwolonych słów oraz zdanie do ocenzurowania. Każde niedozwolone słowo ma zostać zastąpione znakiem *.
+    > cenzura([‘Ala’, ‘kot’], ‘Ala ma kota i psa’ );
+    * ma *a i psa */
 
 }
