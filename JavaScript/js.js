@@ -1,4 +1,5 @@
 function zadanie1(...arr) {
+
     /* Napisz funkcję, sprawdzającą, czy dane trzy liczby tworzą
     „trójkę pitagorejską” (uwaga – liczby nie muszą być podane w
     kolejności rosnącej). */
@@ -17,6 +18,7 @@ function zadanie1(...arr) {
 }
 
 function zadanie2(...params) {
+
     /* Napisz funkcję wypisującą wszystkie liczby z przedziału a-b,
     podzielne przez c. */
 
@@ -41,6 +43,7 @@ function zadanie2(...params) {
 }
 
 function zadanie3(count) {
+
     /* Napisz funkcję wypisującą w konsoli tabliczkę mnożenia o
     boku podanym jako parametr */
 
@@ -59,6 +62,7 @@ function zadanie3(count) {
 }
 
 function zadanie4(lengthOfFibonacciSequence) {
+
     /* Napisz funkcję wypisującą w konsoli ciąg Fibonacciego o długości podanej jako parametr. */
 
     switch (lengthOfFibonacciSequence) {
@@ -92,6 +96,7 @@ function zadanie4(lengthOfFibonacciSequence) {
 }
 
 function zadanie5(height) {
+
     /* Napisz funkcję rysującą choinkę o podanej wysokości. */
 
     if (height == undefined) {
@@ -154,6 +159,7 @@ function zadanie6(height) {
 }
 
 function zadanie7(shape, ...params) {
+
     /* Napisz funkcję liczącą pole wybranej figury (prostokąt, trapez, równoległobok, trójkąt) z wykorzystaniem instrukcji switch. Każda figura powinna mieć osobną funkcję do liczenia pola. */
 
     let shapeArea;
@@ -230,8 +236,6 @@ function zadanie8(shape, ...params) {
 
 function zadanie9(height) {
 
-    // !! DOKOŃCZ !!
-
     /* Napisz funkcję wypisującą w konsoli trójkąt Pascala o wysokości podanej jako parametr. */
 
     let res = [];
@@ -263,20 +267,22 @@ function zadanie9(height) {
 
 function zadanie10(arr, text) {
 
-    // !! DOKOŃCZ !!
-
     /* Napisz funkcję cenzurującą zdanie. Funkcja ma otrzymać 2 parametry: tablicę niedozwolonych słów oraz zdanie do ocenzurowania. Każde niedozwolone słowo ma zostać zastąpione znakiem *.
     > cenzura([‘Ala’, ‘kot’], ‘Ala ma kota i psa’ );
     * ma *a i psa */
 
-    let result = text;
+    let words = text.split(" ");    // tablica słów
 
-    console.log(text.includes(arr))
-    // arr.forEach(slowo => {
-    //     result = text.includes(slowo) ? arr.replace(slowo, '*') : '';
-    // });
+    let output = "";  // ciąg znaków
 
+    for (let i = 0; i < words.length; i++) {   // iteracja po slowach tekstu
+        for (let j = 0; j < arr.length; j++) {
+            if (words[i] == arr[j]) {
+                words[i] = "*";
+            }
+        }
+    }
 
-    //console.log(result);
-
+    output = words.join(" ")
+    return output;
 }
