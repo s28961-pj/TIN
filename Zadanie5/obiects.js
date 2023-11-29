@@ -39,16 +39,16 @@ const mazda = new Auto(2020, 350000, 80000, 80000);
 
 const cars = [];
 
-const dodajAuto = function(auto) {      // Funkcja, która dopisze auto do tablicy samochodow, jesli jego cena jest wieksza niz 10000.
+const dodajAuto = function (auto) {      // Funkcja, która dopisze auto do tablicy samochodow, jesli jego cena jest wieksza niz 10000.
     if (auto.cena_koncowa > 10000) {
         cars.push(auto)
         console.log("Auto dodane do tablicy")
     } else "Zbyt niska cena."
-}    
+}
 //dodajAuto(mazda);
 
 
-const zwiekszRok = function(cars) {      // Funkcja, ktora dla wszystkich aut z tablicy zwieksza rok o 1.
+const zwiekszRok = function (cars) {      // Funkcja, ktora dla wszystkich aut z tablicy zwieksza rok o 1.
     cars.forEach(element => {
         element.rok++;
         console.log(element.rok)
@@ -64,16 +64,48 @@ class Ocena {
 }
 
 class Student {
-    constructor(imie, nazwisko, ...parametry) {
+
+    constructor(imie, nazwisko, ...parametry) {     // Konstruktor 
         this.imie = imie;
         this.nazwisko = nazwisko;
     }
-    oceny = [];
-    sredniaOcen = 0;
+
+    tablicaOcen = [];   // pusta tablica ocen
+
+    sredniaOcen() {     // metoda zwracająca średnią ocen
+        let result = 0;
+        for (let i = 0; i < this.tablicaOcen.length; i++) {
+            result += this.tablicaOcen[i].wartosc;
+        }
+        result /= this.tablicaOcen.length;
+        return result;
+    };
+
     hello() {
-        console.log(`Witaj ${this.imie} ${this.nazwisko}, Twoja średnia ocen to: ${this.sredniaOcen}.`);
+        console.log(`Witaj ${this.imie} ${this.nazwisko}, Twoja średnia ocen to: ${this.sredniaOcen()}.`);
+    }
+
+    set oceny(x) {
+        if (x.constructor.name == "Ocena") {
+            this.tablicaOcen.push(x);
+            this.sredniaOcen();
+        }
+    }
+
+    get oceny() {
+        let result = "";
+        for (let i = 0; i < this.tablicaOcen.length; i++) {
+            result += `Przedmiot: ${this.tablicaOcen[i].przedmiot} - ${this.tablicaOcen[i].wartosc}. `
+        }
+        return result;
     }
 }
+let ocena1 = new Ocena("Matematyka", 4);
+let ocena2 = new Ocena("TIN", 2);
+let s = new Student("Roland", "Liedtke");
 
-let s = new Student("Jan", "Kowalski")
+s.oceny = ocena1;
+s.oceny = ocena2;
 s.hello()
+
+console.log(s.oceny)
