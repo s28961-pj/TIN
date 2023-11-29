@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS 2</title>
+    <meta charset="utf-8" />
+    <!-- RWD -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HTML basics" />
+    <meta name="keywords" content="HTML XHTML" />
+    <link rel="stylesheet" href="style2.css" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="subnav">
+          <button class="subnavbtn">Main</button>
+          <div class="subnav-content">
+            <a href="#data-table" target="_self">Data</a>
+            <a href="#image" target="_self">Image</a>
+            <a href="#contact-form" target="_self">Contact</a>
+          </div>
+        </div>
+
+        <div class="subnav">
+          <button class="subnavbtn">Footer</button>
+          <div class="subnav-content">
+            <a href="#newsletter" target="_self">Newsletter</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div>
+        <h1 id="main">TIN Website</h1>
+        <h2>Personal data</h2>
+        <table id="data-table">
+          <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Country</th>
+          </thead>
+          <tr>
+            <td>Alfreds</td>
+            <td>Futterkiste</td>
+            <td>53</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Francisco</td>
+            <td>Chang</td>
+            <td>33</td>
+            <td>Mexico</td>
+          </tr>
+          <tr>
+            <td>Maria</td>
+            <td>Anders</td>
+            <td>24</td>
+            <td>USA</td>
+          </tr>
+        </table>
+
+        <h3>Example text</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <img
+          src="https://rolandliedtke.me/tin/contact.jpg"
+          id="image"
+          alt="contact image"
+        />
+      </div>
+
+      <div>
+        <form id="contact-form">
+          <fieldset>
+            <legend>Contact Form</legend>
+
+            <div>
+              <label for="firstname">First Name</label>
+              <input
+                id="firstname"
+                name="firstname"
+                type="text"
+                placeholder="John"
+              /><br />
+
+              <label for="lastname">Last Name</label>
+              <input
+                id="lastname"
+                name="lastname"
+                type="text"
+                placeholder="Smith"
+              /><br />
+
+              <label for="age">Age</label>
+              <input
+                id="age"
+                min="1"
+                max="100"
+                name="age"
+                type="number"
+                placeholder="25"
+              /><br />
+
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="Poland" selected>Poland</option>
+                <option value="Other">Other</option></select
+              ><br />
+
+              How did we do?<br />
+              <label class="container">1</label>
+              <input type="radio" checked="checked" name="radio" />
+
+              <label class="container">2</label>
+              <input type="radio" name="radio" />
+
+              <label class="container">3</label>
+              <input type="radio" name="radio" />
+
+              <label class="container">4</label>
+              <input type="radio" name="radio" />
+
+              <label class="container">5</label>
+              <input type="radio" name="radio" /><br />
+            </div>
+
+            <div>
+              <label for="message">Subject</label>
+              <textarea
+                id="message"
+                name="message"
+                maxlength="1000"
+                placeholder="Write your message..."
+                rows="10"
+                cols="30"
+              ></textarea
+              ><br />
+
+              <button type="reset" onclick="">Reset</button>
+              <button type="submit" onclick="alert('Good job!')">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+      <hr />
+    </main>
+
+    <footer>
+      <div></div>
+
+      <div></div>
+
+      <div>
+        <form id="newsletter" target="_self" method="post" autocomplete="on">
+          <h2>Sign Up For a Newsletter</h2>
+
+          <label for="email"></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email here"
+            required
+          /><br />
+
+          <input type="checkbox" name="gdpr" id="gdpr" required />
+          <label for="gdpr">I agree</label><br />
+
+          <button type="submit" onclick="alert('Good job!')">Submit</button>
+        </form>
+      </div>
+
+      <div id="copyright">
+        <hr />
+        <p>
+          Copyright © 2023
+          <a href="https://rolandliedtke.me/" target="_blank">Roland Liedtke</a
+          >. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
