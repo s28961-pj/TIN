@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        margin: 10px;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .item {
+        width: 50px;
+        height: 50px;
+        background-color: aqua;
+        border: 1px solid black;
+        margin: 10px;
+      }
+
+      #calculator {
+        width: max-content;
+        background-color: antiquewhite;
+      }
+
+      #result {
+        background-color: aquamarine;
+        height: 60px;
+        text-align: end;
+        font-size: 36px;
+      }
+
+      fieldset {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        margin: 6px;
+      }
+
+      input[type="number"] {
+        width: 100px;
+        padding: 6px;
+        text-align: center;
+      }
+
+      #select {
+        width: 100px;
+        text-align: center;
+        height: 30px;
+      }
+
+      #table th {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Zadanie 1 -->
+    <div id="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <div>
+      <button id="firstButton">1</button>
+      <button id="secondButton">2</button>
+      <button id="thirdButton">3</button>
+      <button id="fourthButton">4</button>
+    </div>
+    <hr />
+
+    <!-- Zadanie 2 -->
+    <div id="calculator">
+      <div id="result"></div>
+      <fieldset>
+        <div class="column">
+          <label for="firstInput">Pierwsza liczba</label>
+          <input type="number" name="first" id="firstInput" value="0" />
+        </div>
+
+        <div class="column">
+          <label for="secondInput">Druga liczba</label>
+          <input type="number" name="second" id="secondInput" value="0" />
+        </div>
+
+        <div class="column">
+          <label for="select">Działanie</label>
+          <select id="select">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+          </select>
+        </div>
+
+        <button id="calculateButton">Oblicz</button>
+      </fieldset>
+    </div>
+    <hr>
+
+    <!-- Zadanie 3 -->
+    <div id="carsTable">
+
+    </div>
+    <hr>
+
+
+    <!-- Zadanie 4 -->
+
+    <script src="dom.js"></script>
+  </body>
+</html>
