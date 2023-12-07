@@ -148,8 +148,8 @@ function zadanie3() {
 
     const table = document.getElementById("table");
 
-    table.innerHTML += 
-    `<thead>
+    table.innerHTML +=
+        `<thead>
         <th>Rok</th>
         <th>Przebieg</th>
         <th>Cena wyjściowa</th>
@@ -161,8 +161,8 @@ function zadanie3() {
     const tbody = document.getElementById("tbody");
 
     arr.forEach(element => {
-        tbody.innerHTML += 
-        `<tr>
+        tbody.innerHTML +=
+            `<tr>
             <td>${element.rok}</td>
             <td>${element.przebieg}</td>
             <td>${element.cena_wyjsciowa}</td>
