@@ -174,3 +174,79 @@ function zadanie3() {
 
 }
 zadanie3();
+
+function zadanie5() {
+    const accordionList = document.getElementsByClassName("accordion");
+
+    for (let i = 0; i < accordionList.length; i++) {
+        accordionList[i].addEventListener("click", function () {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            let panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+
+            /* Animation */
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+
+    }
+
+}
+zadanie5();
+
+
+/* Zadanie 6 */
+
+// Open the Modal
+function openModal() {
+    document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function showSlides(n) {
+    let i;
+
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("demo");
+    const captionText = document.getElementById("caption");
+
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    captionText.innerHTML = dots[slideIndex - 1].alt;
+}
