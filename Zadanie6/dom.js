@@ -176,10 +176,10 @@ function zadanie3() {
 zadanie3();
 
 function zadanie5() {
-    const accordionList = document.getElementsByClassName("accordion");
+    const accordionList = document.querySelectorAll(".accordion");
 
-    for (let i = 0; i < accordionList.length; i++) {
-        accordionList[i].addEventListener("click", function () {
+    accordionList.forEach(element => {
+        element.addEventListener("click", function () {
             /* Toggle between adding and removing the "active" class,
             to highlight the button that controls the panel */
             this.classList.toggle("active");
@@ -198,13 +198,21 @@ function zadanie5() {
             } else {
                 panel.style.maxHeight = panel.scrollHeight + "px";
             }
+
+            // Close other accordion panels
+            accordionList.forEach(otherElement => {
+                if (otherElement !== element) {
+                    otherElement.classList.remove("active");
+
+                    let otherPanel = otherElement.nextElementSibling;
+                    otherPanel.style.display = "none";
+                    otherPanel.style.maxHeight = null;
+                }
+            });
         });
-
-    }
-
+    })
 }
 zadanie5();
-
 
 /* Zadanie 6 */
 
