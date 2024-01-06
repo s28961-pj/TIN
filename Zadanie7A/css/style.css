@@ -1,5 +1,5 @@
 body {
-    background-color: #799496;
+    background-color: #799496 !important;
     box-sizing: border-box;
 }
 
@@ -10,8 +10,4 @@ h1 {
 
 th, td {
     border: 2px solid #ACC196;
-}
-
-@media screen {
-    
 }

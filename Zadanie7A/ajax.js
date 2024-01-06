@@ -1,3 +1,6 @@
+// tablica 3 ostatnich newsów
+const news = [];
+
 async function getData() {
 
     // pobiera dane z Szuflandii i czeka az cały się załaduje
@@ -6,62 +9,49 @@ async function getData() {
     // parsuje dane do JSON i czeka az się wykona
     const data = await response.json();
 
+    // Dodaje 3 najnowsze newsy
+    if (news.length < 3) {
+        news.push(data.news);
+    } else {
+        news.shift();
+        news.push(data.news);
+    }
+    console.log(news)
 
+    // Wyświetla nagłowki tabeli 
     const headRow = document.getElementById("headRow");
+    headRow.innerHTML = '';
     const keys = Object.keys(data.stock);
     for (let i = 0; i < keys.length; i++) {
         headRow.innerHTML += `<th>${keys[i]}</th>`;
-    }
+    };
 
-    const news = [];
+    // Wyświetla dane tabeli
+    const bodyRow = document.getElementById("bodyRow");
+    bodyRow.innerHTML = '';
+    for (let i = 0; i < keys.length; i++) {
+        bodyRow.innerHTML += `<td>${data.stock[keys[i]]}</td>`;
+    };
 
-    function updateNewsSection() {
-        const slider = document.getElementById("lightSlider");
-        const carouselInner = document.getElementById("carousel-inner");
+    // Wyświetla rotator z 3 newsami 
+    const carouselInner = document.getElementById("carousel-inner");
+    carouselInner.innerHTML = '';
+    news.forEach(element => {
+        carouselInner.innerHTML += `<div class="carousel-item">
+                <p class="d-block w-100 text-center">${element}</p>
+              </div>`;
+    });
 
-        slider.style.width = '100%';
-        carouselInner.innerHTML = '';
-
-        if (news[0] != undefined) {
-            slider.innerHTML += `<li class="list-inline-item"><h2>${news[0]}</h2></li>`;
-            carouselInner.innerHTML += `<div class="carousel-item active">
-            <p class="d-block w-100 text-center">${news[0]}</p>
-          </div>`;
-        }
-        if (slider.children.length > 3) {
-            slider.removeChild(slider.children.item(0));
-        };
-
-    }
-
-    // Ustawia cykliczne wywołanie funkcji
-    setInterval(async () => {
-
-        // pobiera dane z Szuflandii i czeka az cały się załaduje
-        const response = await fetch("http://szuflandia.pjwstk.edu.pl/~ppisarski/zad8/dane.php");
-
-        // parsuje dane do JSON i czeka az się wykona
-        const data = await response.json();
-
-        updateNewsSection();
-
-
-        // Dodaje 3 najnowsze newsy
-        if (news.length < 3) {
-            news.push(data.news);
+    // dodaje class 'active' do pierwszego carousel-item
+    const carouselItems = carouselInner.querySelectorAll('.carousel-item');
+    carouselItems.forEach((item, index) => {
+        if (index === 0) {
+            item.classList.add('active');
         } else {
-            news.shift();
-            news.push(data.news)
+            item.classList.remove('active');
         }
-
-        // Wyświetla kursy akcji
-        const bodyRow = document.getElementById("bodyRow");
-        bodyRow.innerHTML = '';
-        for (let i = 0; i < keys.length; i++) {
-            bodyRow.innerHTML += `<td>${data.stock[keys[i]]}</td>`;
-        }
-
-    }, 3000);
+    });
 }
 
-getData();
+// Ustawia cykliczne wywołanie funkcji
+setInterval(getData, 3000);

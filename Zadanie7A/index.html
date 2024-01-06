@@ -2,29 +2,33 @@
 <html>
   <head>
     <!-- Bootstrap 5.3.2 CSS -->
-    <link
-      href="bootstrap-5.3.2-dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap 5.3.2 JS -->
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Custom Script -->
+    <!-- Custom Script JS -->
     <script src="ajax.js"></script>
   </head>
 
   <body>
     <div class="container-fluid align-item-center justify-content-center">
-      <br>
+      <br />
       <h1 class="display-1 text-center">Newsy Giełdowe</h1>
-      <br>
+      <br />
     </div>
 
+    <!-- Tabela kursów -->
     <div class="container-fluid align-item-center justify-content-center">
       <div class="row">
         <div class="col table-responsive">
-          <table id="tableBox" class="table table-striped table-hover table-dark">
+          <table
+            id="tableBox"
+            class="table table-striped table-hover table-dark"
+          >
             <thead id="thead">
               <tr id="headRow"></tr>
             </thead>
@@ -35,41 +39,32 @@
         </div>
       </div>
     </div>
-    <br>
+    <br />
 
+    <!-- Karuzela newsów -->
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-
       <div class="carousel-inner" id="carousel-inner">
         <!-- script  -->
       </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Wstecz</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Dalej</span>
       </button>
-
-    </div>
-    
-    <br>
-    <div class="container-fluid justify-content-center">
-      <div class="row">
-        <div class="col">
-          <div id="slider">
-            <ul id="lightSlider" class="list-unstyled list-inline"></ul>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- JS scripts -->
-
-    <!-- jQuery 5.3.2  -->
-    <script
-      src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"
-    ></script>
   </body>
 </html>
