@@ -8,6 +8,7 @@ h1 {
     text-shadow: 5px -5px 5px rgba(172, 193, 150, 1);
 }
 
-th, td {
+th,
+td {
     border: 2px solid #ACC196;
 }

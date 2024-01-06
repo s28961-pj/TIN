@@ -38,7 +38,7 @@ async function getData() {
     carouselInner.innerHTML = '';
     news.forEach(element => {
         carouselInner.innerHTML += `<div class="carousel-item">
-                <p class="d-block w-100 text-center">${element}</p>
+                <p class="d-block w-100 text-center text-warning display-5">${element}</p>
               </div>`;
     });
 
